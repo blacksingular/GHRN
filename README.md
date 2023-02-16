@@ -51,3 +51,14 @@ Note that a delete ratio of 0 should be run first to get predictions y.
 # Acknowledgement
 Our code references:
 - [BWGNN](https://github.com/squareRoot3/Rethinking-Anomaly-Detection)
+
+# Reference 
+```
+@inproceedings{
+    gao2023ghrn,
+    title={Addressing Heterophily in Graph Anomaly Detection: A Perspective of Graph Spectrum},
+    author={Yuan Gao, Xiang Wang, Xiangnan He, Zhenguang Liu, Huamin Feng, Yongdong Zhang},
+    booktitle={WWW},
+    year={2023},
+}
+```
