@@ -52,15 +52,16 @@ class Dataset:
                 graph = dgl.to_homogeneous(dataset[0], ndata=['feature', 'label', 'train_mask', 'val_mask', 'test_mask'])
                 graph = dgl.add_self_loop(graph)
                 if del_ratio != 0.:
-                    with open(f'probs_yelp.pkl', 'rb') as f:
+                    with open(f'probs_yelp_BWGNN_{load_epoch}_{homo}.pkl', 'rb') as f:
                         graph.ndata['pred_y'] = pkl.load(f)
                     graph = random_walk_update(graph, del_ratio, adj_type)
                     graph = dgl.add_self_loop(dgl.remove_self_loop(graph))
             else:
                 if del_ratio != 0.:
-                    with open(f'probs_yelp.pkl', 'rb') as f:
+                    with open(f'probs_yelp_BWGNN_{load_epoch}_{homo}.pkl', 'rb') as f:
                         pred_y = pkl.load(f)
                     data_dict = {}
+                    flag = 1
                     for relation in graph.canonical_etypes:
                         graph_r = dgl.to_homogeneous(graph[relation], ndata=['feature', 'label', 'train_mask', 'val_mask', 'test_mask'])
                         graph_r = dgl.add_self_loop(graph_r)
@@ -68,6 +69,7 @@ class Dataset:
                         graph_r = random_walk_update(graph_r, del_ratio, adj_type)
                         graph_r = dgl.remove_self_loop(graph_r)
                         data_dict[('review', str(flag), 'review')] = graph_r.edges()
+                        flag += 1
                     graph_new = dgl.heterograph(data_dict) 
                     graph_new.ndata['label'] = graph.ndata['label']
                     graph_new.ndata['feature'] = graph.ndata['feature']
