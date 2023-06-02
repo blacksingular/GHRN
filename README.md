@@ -57,7 +57,7 @@ Our code references:
 @inproceedings{
     gao2023ghrn,
     title={Addressing Heterophily in Graph Anomaly Detection: A Perspective of Graph Spectrum},
-    author={Yuan Gao, Xiang Wang, Xiangnan He, Zhenguang Liu, Huamin Feng, Yongdong Zhang},
+    author={Yuan Gao and Xiang Wang and Xiangnan He and Zhenguang Liu and Huamin Feng and Yongdong Zhang},
     booktitle={WWW},
     year={2023},
 }
