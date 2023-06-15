@@ -78,6 +78,8 @@ class Dataset:
                     graph_new.ndata['test_mask'] = graph.ndata['test_mask']
                     graph = graph_new
 
+
+        
         elif name == 'amazon':
             dataset = FraudDataset(name, train_size=0.4, val_size=0.2)
             graph = dataset[0]
