@@ -48,6 +48,8 @@ python main.py --dataset tfinance --del_ratio 0.015
 ```
 Note that a delete ratio of 0 should be run first to get predictions y.
 
+Also, [here](https://github.com/squareRoot3/GADBench)'s an awesome implementation.
+
 # Acknowledgement
 Our code references:
 - [BWGNN](https://github.com/squareRoot3/Rethinking-Anomaly-Detection)
